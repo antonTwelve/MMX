@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style4.css">
+    <script src="jquery/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="script.js"></script>
+    <script src="script2.js"></script>
+</head>
+
+<body>
+    <div class="topContainer">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                功能切换
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                    <div class="dropdown-item" onclick="sw('余数')">余数计算</div>
+                </li>
+                <li>
+                    <div class="dropdown-item" onclick="sw('abmodm')">a^b mod m</div>
+                </li>
+                <li>
+                    <div class="dropdown-item" onclick="sw('欧几里得')">欧几里得</div>
+                </li>
+                <li>
+                    <div class="dropdown-item" onclick="sw('2P')">2P</div>
+                </li>
+                <li>
+                    <div class="dropdown-item" onclick="sw('PQ')">P+Q</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="Container">
+        <div class="leftContainer">
+            <div class="Box" id="余数">
+                <div class="box_item box_item_style1">
+                    <div class="inputContainer1">
+                        <input id="ysInputA" class="inputStyle1 fontStyle1" style="text-align: right;" placeholder="a"
+                            spellcheck="false" oninput="mod()">
+                        <span class="fontStyle1">%</span>
+                        <input id="ysInputB" class="inputStyle1 fontStyle1" placeholder="b" spellcheck="false"
+                            oninput="mod()">
+                    </div>
+                </div>
+            </div>
+            <div class="Box" id="abmodm">
+                <div class="box_item">
+                    <div class="inputContainer2">
+                        <div>
+                            <span>a=</span>
+                            <input id="abmInputA" class="" spellcheck="false" oninput="abmmod()">
+                        </div>
+                        <div>
+                            <span>b=</span>
+                            <input id="abmInputB" class="" spellcheck="false" oninput="abmmod()">
+                        </div>
+                        <div>
+                            <span>m=</span>
+                            <input id="abmInputM" class="" spellcheck="false" oninput="abmmod()">
+                        </div>
+                    </div>
+                </div>
+                <div id="abmPreview">
+                    <span id="abmA">a</span>
+                    <span id="abmB">b</span>
+                    <span style="margin:0 5px;">mod</span>
+                    <span id="abmM">m</span>
+                </div>
+                <div style="margin-top:100px;margin-left:30px;color:rgb(119, 119, 119)">
+                    不知道咋做UI了, 凑合着用吧┑(￣Д ￣)┍
+                </div>
+            </div>
+            <div class="Box" id="欧几里得">
+                <div class="box_item_style3">
+                    <div>
+                        <span>a=</span>
+                        <input id="EinputA" oninput="Euclid()">
+                    </div>
+                    <div>
+                        <span>b=</span>
+                        <input id="EinputB" oninput="Euclid()">
+                    </div>
+                </div>
+                <div style="margin-left:30px;margin-top:60px;color:rgb(158, 158, 158)">
+                    我不做UI啦, 丑就丑吧 ┗|｀O′|┛
+                    <span style="display: block; font-size: 12px; color:rgb(138, 138, 138)">ps:新年快乐 --2022.1.1
+                        0:47</span>
+                </div>
+            </div>
+            <div class="Box" id="中国剩余定理">
+
+            </div>
+            <div class="Box" id="2P">
+                <div class="inputStyle4">
+                    <span>y²≡x³+</span>
+                    <input placeholder="a">
+                    <span>x</span>
+                    <input placeholder="b">
+                    <span>mod</span>
+                    <input placeholder="p">
+                </div>
+                <div class="inputStyle4">
+                    <span>P=(</span>
+                    <input id="PIdDInputPx" placeholder="x">
+                    <span>,</span>
+                    <input id="PIdDInputPy" placeholder="y">
+                    <span>)</span>
+                </div>
+            </div>
+            <div class="Box" id="PQ">
+                <div class="inputStyle4">
+                    <span>y² ≡ x³+</span>
+                    <input class="inputs4" id="PIdAddInputa" placeholder="a" oninput="PQc()">
+                    <span>x +</span>
+                    <input class="inputs4" id="PIdAddInputb" placeholder="b" oninput="PQc()">
+                    <span>mod</span>
+                    <input class="inputs4" id="PIdAddInputp" placeholder="p" oninput="PQc()">
+                </div>
+                <div class="inputStyle4">
+                    <span>P=(</span>
+                    <input id="PIdAddInputPx" placeholder="x" oninput="PQc()">
+                    <span>,</span>
+                    <input id="PIdAddInputPy" placeholder="y" oninput="PQc()">
+                    <span>)</span>
+                </div>
+                <div class="inputStyle4">
+                    <span>Q=(</span>
+                    <input id="PIdAddInputQx" placeholder="x" oninput="PQc()">
+                    <span>,</span>
+                    <input id="PIdAddInputQy" placeholder="y" oninput="PQc()">
+                    <span>)</span>
+                </div>
+            </div>
+        </div>
+        <div class="rightContainer">
+            <div id="output">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

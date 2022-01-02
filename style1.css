@@ -1,0 +1,23 @@
+.inputStyle1 {
+    border: none;
+    outline: none;
+}
+
+.fontStyle1 {
+    font-size: 30px;
+    color: #868686;
+}
+
+@media screen and (max-width:1000px) {
+    .fontStyle1 {
+        width: 200px;
+    }
+}
+
+.box_item_style1 {
+    margin-top: 100px;
+}
+
+.inputContainer1 {
+    margin: 0 auto;
+}

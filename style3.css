@@ -1,0 +1,25 @@
+.box_item_style3 {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.box_item_style3>div {
+    margin: 30px 20px;
+}
+
+.box_item_style3>div>input {
+    outline: none;
+    border: none;
+    border-bottom: 2px #333 solid;
+}
+
+.resultStyle3:first-child {
+    margin-top: 30px;
+}
+
+.resultStyle3 {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #222;
+}

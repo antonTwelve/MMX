@@ -1,0 +1,28 @@
+.inputStyle4 {
+    height: 50px;
+    margin: 10px 20px;
+}
+
+.inputStyle4:first-child {
+    margin-top: 50px;
+}
+
+.inputStyle4>input {
+    font-size: 20px;
+    outline: none;
+}
+
+.inputStyle4>span {
+    font-size: 20px;
+}
+
+.inputStyle4>input::placeholder {
+    font-size: 20px;
+}
+
+.inputs4 {
+    width: 50px;
+    border: none;
+    border-bottom: 2px solid rgb(70, 70, 70);
+    text-align: center;
+}
