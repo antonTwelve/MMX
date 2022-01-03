@@ -26,3 +26,22 @@
     border-bottom: 2px solid rgb(70, 70, 70);
     text-align: center;
 }
+
+.inputs4-2 {
+    width: 80px;
+    border: none;
+    border-bottom: 2px solid black;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.resultStyle4:first-child {
+    margin-top: 30px;
+}
+
+.resultStyle4 {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font:600 20px '';
+    color: #222;
+}

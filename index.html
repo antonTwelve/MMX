@@ -102,19 +102,22 @@
             </div>
             <div class="Box" id="2P">
                 <div class="inputStyle4">
-                    <span>y²≡x³+</span>
-                    <input placeholder="a">
+                    <span>y² ≡ x³ + </span>
+                    <input class="inputs4" id="PPInputa" placeholder="a" oninput="PaP()">
                     <span>x</span>
-                    <input placeholder="b">
+                    <input class="inputs4" id="PPInputb" placeholder="b" oninput="PaP()">
                     <span>mod</span>
-                    <input placeholder="p">
+                    <input class="inputs4" id="PPInputp" placeholder="p" oninput="PaP()">
                 </div>
                 <div class="inputStyle4">
                     <span>P=(</span>
-                    <input id="PIdDInputPx" placeholder="x">
+                    <input class="inputs4-2" id="PIdDInputPx" placeholder="x" oninput="PaP()">
                     <span>,</span>
-                    <input id="PIdDInputPy" placeholder="y">
+                    <input class="inputs4-2" id="PIdDInputPy" placeholder="y" oninput="PaP()">
                     <span>)</span>
+                </div>                
+                <div style="margin:50px;font-size:15px; color:rgb(129, 129, 129)">
+                    有BUG, 慎用
                 </div>
             </div>
             <div class="Box" id="PQ">
@@ -128,17 +131,20 @@
                 </div>
                 <div class="inputStyle4">
                     <span>P=(</span>
-                    <input id="PIdAddInputPx" placeholder="x" oninput="PQc()">
+                    <input class="inputs4-2" id="PIdAddInputPx" placeholder="x" oninput="PQc()">
                     <span>,</span>
-                    <input id="PIdAddInputPy" placeholder="y" oninput="PQc()">
+                    <input class="inputs4-2" id="PIdAddInputPy" placeholder="y" oninput="PQc()">
                     <span>)</span>
                 </div>
                 <div class="inputStyle4">
                     <span>Q=(</span>
-                    <input id="PIdAddInputQx" placeholder="x" oninput="PQc()">
+                    <input class="inputs4-2" id="PIdAddInputQx" placeholder="x" oninput="PQc()">
                     <span>,</span>
-                    <input id="PIdAddInputQy" placeholder="y" oninput="PQc()">
+                    <input class="inputs4-2" id="PIdAddInputQy" placeholder="y" oninput="PQc()">
                     <span>)</span>
+                </div>
+                <div style="margin:50px;font-size:15px; color:rgb(129, 129, 129)">
+                    有点小BUG, 算错别怪我...
                 </div>
             </div>
         </div>
