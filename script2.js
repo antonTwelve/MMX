@@ -21,6 +21,28 @@ function inverse(a, b) {
     return s2;
 }
 
+function PaP_F(x1, y1, a, p) {
+    var x3, y3, result = "<div class='resultStyle4'>";
+    var s = ((3 * x1 * x1 + parseInt(a)) * inverse(2 * y1, p)) % p;
+    while (s < 0)
+        s = (s + parseInt(p)) % p;
+    var tccc = (3 * x1 * x1 + parseInt(a)) + "*" + (2 * y1) + "' mod" + p;
+    tccc += ("=" + (3 * x1 * x1 + parseInt(a)) + "*" + inverse(2 * y1, p) + "mod" + p);
+    $('#output').append(result + "s = ((3*x1²+a)/(2*y1))mod p = " + tccc + " = " + s + "</div>");
+    x3 = (s * s - x1 - x1) % p;
+    while (x3 < 0)
+        x3 = (x3 + parseInt(p)) % p;
+    tccc = s + "² - " + x1 + " - " + x1 + " mod " + p + " = ";
+    $('#output').append(result + "x3 = s²-x1-x2 mod p = " + tccc + x3 + "</div>");
+    y3 = (s * (x1 - x3) - y1) % p;
+    while (y3 < 0)
+        y3 = (y3 + parseInt(p)) % p;
+    tccc = s + "*(" + x1 + "-" + x3 + ")-" + y1 + " mod " + p + " = ";
+    $('#output').append(result + "y3 = s(x1-x3)-y1 mod p = " + tccc + y3 + "</div>");
+    result += "2P = ( " + x3 + "," + y3 + " )</div>";
+    $('#output').append(result);
+}
+
 //计算椭圆曲线上不同两点相加的结果
 function PQc() {
     $('#output').empty();
@@ -38,8 +60,8 @@ function PQc() {
         return;
     }
     else if (x1 == x2 && y1 == y2) {
-        result += ("P、Q相同" + "</div>");
-        $('#output').append(result);
+        PaP_F(x1, y1, a, p);
+        console.log("test!");
         return;
     }
     var s = ((y2 - y1) * inverse(x2 - x1, p)) % p;
@@ -64,33 +86,15 @@ function PQc() {
 
 function PaP() {
     $('#output').empty();
-    var x3, y3, result = "<div class='resultStyle4'>";
     var x1 = $('#PIdDInputPx').val();
     var y1 = $('#PIdDInputPy').val();
     var a = $('#PPInputa').val();
     var b = $('#PPInputb').val();
     var p = $('#PPInputp').val();
     if (!isNum([x1, y1, a, b, p])) {
-        result += ("输入无效" + "</div>");
+        var result = "<div class='resultStyle4'>输入无效</div>";
         $('#output').append(result);
         return;
     }
-    var s = ((3 * x1 * x1 + parseInt(a)) * inverse(2 * y1, p)) % p;
-    while (s < 0)
-        s = (s + parseInt(p)) % p;
-    var tccc = (3 * x1 * x1 + parseInt(a)) + "*" + (2 * y1) + "' mod" + p;
-    tccc += ("=" + (3 * x1 * x1 + parseInt(a)) + "*" + inverse(2 * y1, p) + "mod" + p);
-    $('#output').append(result + "s = ((s*x1²+a)/(2*y1))mod p = " + tccc + " = " + s + "</div>");
-    x3 = (s * s - x1 - x1) % p;
-    while (x3 < 0)
-        x3 = (x3 + parseInt(p)) % p;
-    tccc = s + "² - " + x1 + " - " + x1 + " mod " + p + " = ";
-    $('#output').append(result + "x3 = s²-x1-x2 mod p = " + tccc + x3 + "</div>");
-    y3 = (s * (x1 - x3) - y1) % p;
-    while (y3 < 0)
-        y3 = (y3 + parseInt(p)) % p;
-    tccc = s + "*(" + x1 + "-" + x3 + ")-" + y1 + " mod " + p + " = ";
-    $('#output').append(result + "y3 = s(x1-x3)-y1 mod p = " + tccc + y3 + "</div>");
-    result += "P + Q = ( " + x3 + "," + y3 + " )</div>";
-    $('#output').append(result);
+    PaP_F(x1, y1, a, p);
 }
